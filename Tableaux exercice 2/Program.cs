@@ -22,6 +22,7 @@ namespace Tableaux_exercice_2
         }
 
         static void SaisieTab() {
+
             int[] tab = new int[10];
             
             
@@ -38,8 +39,9 @@ namespace Tableaux_exercice_2
             {
                 Console.Write(tab[i] + " ");
             }
-           
-            }
+            Console.WriteLine("Appuyez sur une touche pour terminer");
+            Console.ReadLine();
+           }
         
     }
 }
