@@ -21,9 +21,7 @@ namespace Tableaux_exercice_2
 
         }
 
-        static void SaisieTab()
-
-             {
+        static void SaisieTab() {
             int[] tab = new int[10];
             
             
