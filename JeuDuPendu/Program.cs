@@ -7,42 +7,58 @@ using System.Threading.Tasks;
 namespace JeuDuPendu
 {
     class Program
+
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("***Jeu du Pendu 22/08/2016 V1.0***");
+
             //déclaration des variables
+            string saisie, lettre;
+            //variable tableau
+            string[] MotSecret; 
+            string[] MotConstruit;
 
-            string MotSecret;
-            //string MotConstruit;
-            //string LettreTappes;
-            //string l0, l1, l2, l3, l4, l5, l6;
 
+            // entrée des données 
+            Console.WriteLine("Entrez un mot ");
+            saisie = Console.ReadLine();
+
+           
+            //construction des tabeaux 
+            MotSecret = new string[saisie.Length];
+            MotConstruit = new string[saisie.Length];
+
+            //boucle permettant de remplacer le nombre de caractères entré par l'utilisateur par des "_"
+            for (int i = 0; i < saisie.Length; i++)
+            {
+                MotSecret[i]= saisie.Substring(i, 1);
+                MotConstruit[i] = "_";
+            }
+            //boucle permettant de comparer les tableaux MotSecret et mot construit 
+            while (MotSecret!=MotConstruit)
+            {
+                Console.WriteLine("\nEntrez une lettre");
+                lettre = Console.ReadLine();
+
+                for (int i = 0; i < saisie.Length; i++)
+                {
+                    if (MotSecret[i] == lettre)
+                    {
+                        MotConstruit[i] = lettre;
+                    }
+                }
+                for (int i = 0; i < saisie.Length; i++)
+                {
+                    Console.Write(MotConstruit[i] + " ");
+                    
+
+                }  
+                                          
+            }
             
-            Console.WriteLine("Entrez le mot secret");
-            MotSecret = Console.ReadLine();
-            
+       
 
-            Console.WriteLine("Devinez le mot");
-            Console.WriteLine("_ _ _ _ _ _ _ _ _ _");
-
-            //Console.WriteLine("Entrez une première lettre");
-            //l0=Console.ReadLine();
-            //Console.WriteLine("Entrez une deuxième lettre");
-            //l1 = Console.ReadLine();
-
-
-
-
-            string[] MotSecret = new string[7] { "L0", "l1", "l2", "l3", "l4", "l5", "l6" };//déclaration du tableau
-
-
-
-
-            
-			
-
-	
         }
     }
 }
